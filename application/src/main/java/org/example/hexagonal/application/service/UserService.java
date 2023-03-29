@@ -1,10 +1,13 @@
 package org.example.hexagonal.application.service;
 
-import org.example.hexagonal.application.dto.UserDTO;
+import org.example.hexagonal.domain.User;
 import java.util.List;
 
 public interface UserService {
 
-    List<UserDTO> getAllUsers();
+    List<User> findAllUsers();
 
+    User saveUser(User user);
+
+    void deleteUser(long userId);
 }

@@ -1,26 +1,18 @@
-package org.example.hexagonal.infrastructure.entity;
+package org.example.hexagonal.infrastructure.dto;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.util.Set;
 
-@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserEntity {
+public class UserDTO {
 
-    @Id
-    @GeneratedValue
     private Long userId;
-
     private String username;
-
     private String password;
-
-    @OneToMany(cascade = CascadeType.ALL)
-    private Set<RoleEntity> roles;
+    private Set<RoleDTO> roles;
 
 }

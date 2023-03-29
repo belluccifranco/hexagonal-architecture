@@ -1,6 +1,5 @@
 package org.example.hexagonal.infrastructure.service;
 
-import org.example.hexagonal.application.dto.UserDTO;
 import org.example.hexagonal.application.repository.UserRepository;
 import org.example.hexagonal.application.service.UserService;
 import org.example.hexagonal.domain.User;
@@ -19,8 +18,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<UserDTO> getAllUsers() {
-        return userRepository.getAllUsers();
+    public List<User> findAllUsers() {
+        return userRepository.findAllUsers();
     }
 
+    @Override
+    public User saveUser(User user) {
+        return userRepository.saveUser(user);
+    }
+
+    @Override
+    public void deleteUser(long userId) {
+        userRepository.deleteUser(userId);
+    }
 }
